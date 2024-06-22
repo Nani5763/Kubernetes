@@ -1,0 +1,12 @@
+How to see nodes ----> kubectl get nodes
+How to see config ----> cd .kube
+How to see node Ip's ----> kubectl get nodes -o wide
+If you want to see more information ----> kubectl describe node <Name>
+How to delete cluster ----> eksctl delete cluster --name <Name> --region<region name>
+How to apply yml.file ----> kubectl apply -f <yml name>
+How to see Pod is running or Not ----> kubectl get pods
+Your Pod is running in which Node in how to you know ----> kubectl gets pods -o wide
+If you want Pod in details Means ----> kubectl describe pod<name>
+How to check the Service ----> kubectl get svc
+How to check worker nodes ----> kubectl get nodes -o wide
+We have to give Security group permission(sg) in "Worker Nodes" 
