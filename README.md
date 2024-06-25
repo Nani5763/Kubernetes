@@ -60,12 +60,12 @@ Pods—pods are the smallest unit provided by Kubernetes to manage containerized
 
 A ReplicaSet ensures that a specified number of pod replicas are running at any given time. It is responsible for maintaining the desired number of pods, even in case of node failures or pod crashes.
 
-Key Features:
+- Key Features:
 Ensures that a specified number of replicas are running.
 Can be used directly, but usually not recommended for direct use.
 
-Example ReplicaSet.yml:
-
+- Example ReplicaSet.yml:
+'''
 yaml
 Copy code
 apiVersion: apps/v1
@@ -87,21 +87,22 @@ spec:
         image: my-image:latest
         ports:
         - containerPort: 80
+'''        
 
 # Deployment:-
 
 A Deployment provides declarative updates to applications. It manages ReplicaSets and provides mechanisms to perform rolling updates, rollbacks, and other lifecycle management tasks. When you create a Deployment, Kubernetes automatically creates a ReplicaSet to manage the pods.
 
-Key Features:
+- Key Features:
 
 Manages ReplicaSets and ensures that the desired state of the application is maintained.
 Provides rolling updates and rollbacks.
 Facilitates versioning of application deployments.
 Supports scaling operations.
 
-Example Deployment.yml:
-
-yaml
+- Example Deployment.yml
+'''
+ yaml
 Copy code
 apiVersion: apps/v1
 kind: Deployment
@@ -121,4 +122,5 @@ spec:
       - name: my-container
         image: my-image:latest
         ports:
-        - containerPort: 80
+        - containerPort: 80*/
+'''
