@@ -64,7 +64,9 @@ A ReplicaSet ensures that a specified number of pod replicas are running at any 
 Ensures that a specified number of replicas are running.
 Can be used directly, but usually not recommended for direct use.
 
-- Example ReplicaSet.yml:
+- Example ReplicaSet.yml:-
+
+
 '''
 yaml
 Copy code
@@ -100,7 +102,9 @@ Provides rolling updates and rollbacks.
 Facilitates versioning of application deployments.
 Supports scaling operations.
 
-- Example Deployment.yml
+- Example Deployment.yml:-
+
+
 '''
  yaml
 Copy code
