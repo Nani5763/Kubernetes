@@ -54,3 +54,71 @@ Nodes are physical or virtual machines that can run pods as part of a Kubernetes
 # POD:--------
 Pods—pods are the smallest unit provided by Kubernetes to manage containerized workloads.  A pod typically includes several containers, which together form a functional unit or microservice.
 
+## Difference between ReplicaSet and Deployment ##
+
+# ReplicaSet:-
+
+A ReplicaSet ensures that a specified number of pod replicas are running at any given time. It is responsible for maintaining the desired number of pods, even in case of node failures or pod crashes.
+
+Key Features:
+Ensures that a specified number of replicas are running.
+Can be used directly, but usually not recommended for direct use.
+
+Example ReplicaSet.yml:
+
+yaml
+Copy code
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-container
+        image: my-image:latest
+        ports:
+        - containerPort: 80
+
+# Deployment:-
+
+A Deployment provides declarative updates to applications. It manages ReplicaSets and provides mechanisms to perform rolling updates, rollbacks, and other lifecycle management tasks. When you create a Deployment, Kubernetes automatically creates a ReplicaSet to manage the pods.
+
+Key Features:
+
+Manages ReplicaSets and ensures that the desired state of the application is maintained.
+Provides rolling updates and rollbacks.
+Facilitates versioning of application deployments.
+Supports scaling operations.
+
+Example Deployment.yml:
+
+yaml
+Copy code
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-container
+        image: my-image:latest
+        ports:
+        - containerPort: 80

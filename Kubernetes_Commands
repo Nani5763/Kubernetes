@@ -10,3 +10,8 @@ If you want Pod in details Means ----> kubectl describe pod<name>
 How to check the Service ----> kubectl get svc
 How to check worker nodes ----> kubectl get nodes -o wide
 We have to give Security group permission(sg) in "Worker Nodes" 
+How to delete pod ----> kubectl delete pod <pod name>
+How to check ReplicaSet ----> kubectl get rs
+How to check Deployment ----> kubectl get deploy
+How to delete deployment file ----> kubectl delete deploy <deployment name>
+How to check the load of command ----> kubectl top pods and kubectl top nodes
