@@ -1,30 +1,32 @@
-apiversion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hotstar
 spec:
   replicas: 2
   selector:
-    matchlabels:
+    matchLabels:
       app: hotstar
   template:
     metadata:
-     labels:
-      name: hotstar
+      labels:
+        app: hotstar
     spec:
-      container:
-       - name: hotstar
-         image: 211125314839.dkr.ecr.us-east-1.amazonaws.com/hotstar
-         ports:
-          - containerport: 3000
+      containers:
+      - name: hotstar
+        image: 211125314839.dkr.ecr.us-east-1.amazonaws.com/hotstar
+        ports:
+        - containerPort: 3000
 ---
-apiversion: v1
-kind: service
+apiVersion: v1
+kind: Service
 metadata:
   name: hotstar
 spec:
   type: ClusterIP
   ports:
   - port: 80
+    targetPort: 3000
   selector:
-   app: hotstar   
+    app: hotstar
+  

@@ -7,9 +7,9 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
-  ingressclassname: hotstar
+  ingressClassName: hotstar
   rules:
-    http:
+  - http:
       paths:
       - path: /hotstar
         pathType: Prefix
