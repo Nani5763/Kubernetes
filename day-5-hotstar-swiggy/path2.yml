@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 80  # Service port
       targetPort: 80  # Port on the container
-  type: LoadBalancer  # Change if you need different service type (NodePort, LoadBalancer, etc.)
+  type: ClusterIP  # Change if you need different service type (NodePort, LoadBalancer, etc.)

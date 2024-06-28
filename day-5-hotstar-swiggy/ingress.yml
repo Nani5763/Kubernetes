@@ -9,14 +9,14 @@ spec:
   - host: hotstar.example.com
     http:
       paths:
-      - path: /
+      - path: /hotstar
         pathType: Prefix
         backend:
           service:
             name: hotstar-service
             port:
               number: 80
-        path: /
+        path: /swiggy
         pathType: Prefix
         backend:
           service:
