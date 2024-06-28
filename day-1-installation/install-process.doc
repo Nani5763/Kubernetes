@@ -62,9 +62,19 @@ You can follow same procedure in the official  AWS document [Getting started wit
 
 
 
-------- Docker and Minikube install process-----
+------- Docker install process ---------
+#------------------Docker install-------------
 
-choose instance t2.medium    --2cpu 2gb ram required 
+#sudo amazon-linux-extras install docker #linux 2022
+sudo yum install docker -y #linux 2023
+sudo usermod -aG docker ec2-user
+sudo usermod -aG docker jenkins 
+newgrp docker
+sudo chmod 777 /var/run/docker.sock
+sudo service docker start 
+
+/*choose instance t2.medium    --2cpu 2gb ram required
+
 sudo dnf install docker -y   -----Install Docker first
 
 sudo systemctl start docker.service ---to start thr docker service
@@ -73,10 +83,10 @@ sudo systemctl enable docker.service  --- to enable docker
 
 sudo usermod -a -G docker ec2-user  --- to add the user ec2-user to the docker group 
 
-newgrp docker --to run new group make changes immediatly  
+newgrp docker --to run new group make changes immediatly*/  
 
  
- ------Minikube ------
+ ------Minikube install process ------
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
