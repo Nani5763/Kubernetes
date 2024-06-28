@@ -3,25 +3,16 @@ kind: Ingress
 metadata:
   name: hotstar-ingress
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: hotstar
   rules:
-  - http:
+  - host: hotstar.example.com
+    http:
       paths:
       - path: /hotstar
         pathType: Prefix
         backend:
           service:
-            name: hotstar
-            port:
-              number: 80
-      - path: /swiggy
-        pathType: Prefix
-        backend:
-          service:
-            name: swiggy
+            name: hotstar-service
             port:
               number: 80
