@@ -19,9 +19,7 @@ spec:
         image: 211125314839.dkr.ecr.us-east-1.amazonaws.com/hotstar:latest
         ports:
         - containerPort: 80
-        env:
-        - name: ENVIRONMENT
-          value: "production"
+
 ---
 apiVersion: v1
 kind: Service
@@ -30,10 +28,9 @@ metadata:
   labels:
     app: hotstar
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30036
   selector:
     app: hotstar

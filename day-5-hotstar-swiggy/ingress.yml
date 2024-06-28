@@ -16,7 +16,10 @@ spec:
             name: hotstar-service
             port:
               number: 80
-  tls:
-  - hosts:
-    - hotstar.example.com
-    secretName: hotstar-tls
+        path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: swiggy-service
+            port:
+              number: 80
