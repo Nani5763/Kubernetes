@@ -102,3 +102,26 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 chmod +x ./kubectl  -----Make the kubectl binary executable
 
 sudo mv ./kubectl /usr/local/bin/kubectl  ----sudo mv ./kubectl /usr/local/bin/kubectl
+
+--------------ingress Install-----------------
+What is an Ingress?
+In Kubernetes, an Ingress is an object that allows access to your Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services.
+
+kubectl create namespace ingress-nginx # create name space for ingress-nginx
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.1/deploy/static/provider/cloud/deploy.yaml     ----to install ingress controller yaml 
+
+
+Create Below deployment file git hub link https://github.com/CloudTechDevOps/Kubernetes/tree/main/day-5-ingress
+
+create deployment file for path-1
+
+create deployment file for path-2
+
+create ingress resource file 
+
+Note:
+after deploy the above files just run below command 
+kubectl get ingress
+we are able to see load balancer link and access by giving path along 
+
