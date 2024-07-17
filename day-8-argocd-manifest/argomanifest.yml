@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Nani5763/Kubernetes.git
+    targetRevision: HEAD
+    path: day-8-argocd-manifest
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: swiggy-app
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
