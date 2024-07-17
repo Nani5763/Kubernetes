@@ -1,0 +1,33 @@
+------------------------------------------------------------------------------------------------                                      
+                                      ArgoCD
+------------------------------------------------------------------------------------------------
+## ArgoCD have two types of Approaches
+   1) Manual Process [By Using UI] 
+   2) ManiFest file Process [By Using Yaml file]
+-------------------------------------------------------------------------------------------------
+
+## Create NameSpace of ArgoCd
+
+   * Kubectl create namespace argocd
+
+## Installation of ArgoCD by using below Link
+  
+   * kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+##After Installation the ArgoCD , You can run the below command to check what resources it has created.
+   
+   * Kubectl get all -n argocd
+
+##Now in order to access the UI of ArgoCD, you need to run the below command.
+
+   * kubectl edit svc argocd-server -n argocd #enable NodePort
+
+##Now in order to log into the UI you need the Credentials. So, for a Username, you can write "admin" and the password is stored in the secret called "argocd-initial-admin-secret" in the cluster.
+
+--> You need to run the below command to get the value of the secret.
+
+   * kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
+
+##The secret base64 encoded so, you have to decode the secret by running the below command.
+
+   * echo <secret value> | base64 --decode
