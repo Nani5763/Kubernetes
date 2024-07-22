@@ -1,6 +1,6 @@
 ################ HELM CHARTS ################
 
-Interview they are asking did you work on Helm Charts?
+* Interview they are asking did you work on Helm Charts?
 A) Somecases may be yes, if you have a good knowledge you can say yes i have worked on helm charts. Otherwise i know helm charts but i have never work on helm charts but i know the process. Instead of "NO".
 
 # Defination:-
