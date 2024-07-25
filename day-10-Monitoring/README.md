@@ -91,29 +91,41 @@ Helm is a package manager for Kubernetes. Helm simplifies the installation of al
 
 # Steps
 
-Step-1. We need to add the Helm Stable Charts for your local client. Execute the below command:
+Step-1: Install Helm
+
+    * curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+
+Step-2: Give Permission
+
+    * chmod 700 get_helm.sh
+    * ./get_helm.sh
+    * helm version
+
+Step-3: We need to add the Helm Stable Charts for your local client. Execute the below command:
    
     * helm repo add stable https://charts.helm.sh/stable
 
-Step2: Add Prometheus Helm repo
+Step-4: Add Prometheus Helm repo
 
     * helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
-Step 3: Create Prometheus namespace
+Step-5: Create Prometheus namespace
  
     * kubectl create namespace prometheus
 
-Step 4: above command is used to install kube-Prometheus-stack. The helm repo kube-stack-Prometheus comes with a Grafana deployment embedded ( as the default one )
+Step-6: above command is used to install kube-Prometheus-stack. The helm repo kube-stack-Prometheus comes with a Grafana deployment embedded ( as the default one )
 
-    * helm install stable prometheus-community/kube-prometheus-stack -n prometheus
+    * helm install prometheus prometheus-community/prometheus -n prometheus
 
-Step 5: To check whether Prometheus is installed or not use the below command
+Step-7: To check whether Prometheus is installed or not use the below command
 
     * kubectl get pods -n prometheus
 
-Step 6: To check the services file (svc) of the Prometheus
+Step-8: To check the services file (svc) of the Prometheus
 
     * kubectl get svc -n prometheus
+
+
 -----------------------------------------------------------------------------------------------
 
 * Grafana will be coming along with Prometheus as the stable version
@@ -148,6 +160,8 @@ command to get the svc file.
     * kubectl get secret --namespace prometheus stable-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 * the username is "admin"
+
+--------------------------------------------------------------------------------------------------------
 
 # Note: we can deploy the Grafana and Prometheus with a different method:-
 
