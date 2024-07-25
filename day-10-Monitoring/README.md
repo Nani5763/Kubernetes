@@ -115,7 +115,11 @@ Step-5: Create Prometheus namespace
 
 Step-6: above command is used to install kube-Prometheus-stack. The helm repo kube-stack-Prometheus comes with a Grafana deployment embedded ( as the default one )
 
+<<<<<<< HEAD
     * helm install prometheus prometheus-community/prometheus -n prometheus
+=======
+    * helm install prometheus prometheus-community/prometheus
+>>>>>>> 896c71a71a9a6d2d62b8b527a4e99dae6300b151
 
 Step-7: To check whether Prometheus is installed or not use the below command
 
@@ -170,4 +174,6 @@ command to get the svc file.
 2. Prometheus Operator — to simplify and automate the configuration and management of the Prometheus monitoring stack running on a Kubernetes cluster
 
 3. Helm chart — Using helm to install Prometheus Operator including Grafana
+
+-----------------------------------------------------------------------------------------------------------
 
