@@ -112,3 +112,4 @@ After edit the file run below command to update cluster for created user
 aws eks update-kubeconfig --name <ClusterName> --profile <IAMUSER>  #user 
 
 aws eks update-kubeconfig --name naresh  #for defulat one
+
