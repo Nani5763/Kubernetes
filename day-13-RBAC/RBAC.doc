@@ -2,9 +2,9 @@ Step-1 Need to create IAM user with EKS cluster permission
 
 Step-2 aws configure --profile IAMuser
 
-AKIATCKAMUULQNWTRSBE (Access Key)
+ Generate access key (Access Key)
 
-R6tDNRygwpzxwM/otqrus6/Jn8PtJyerwAqky5Dy (Secret Key)
+ Generate Secret key (Secret Key)
 
 step-2 create kuberenetes Role
 
