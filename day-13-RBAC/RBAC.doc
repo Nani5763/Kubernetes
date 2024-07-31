@@ -4,7 +4,7 @@ Step-2 aws configure --profile IAMuser
 
  Generate accesskey (AccessKey)
 
- Generate Secretkey (SecretKey)
+ Generate secretkey (SecretKey)
 
 step-2 create kuberenetes Role
 
