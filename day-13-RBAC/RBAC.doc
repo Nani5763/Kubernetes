@@ -1,6 +1,6 @@
 Step-1 Need to create IAM user with EKS cluster permission
 
-Step-2 aws configure --profile IAMuser
+Step-2 aws configure --profile <IAM USER NAME>
 
        * Generated keys
 
