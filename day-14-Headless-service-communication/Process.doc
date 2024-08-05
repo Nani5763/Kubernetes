@@ -41,6 +41,7 @@ By setting the clusterIP field to None, Headless Services bypass the traditional
 
  To access stateless to stateful communicate through headless service -->>> "podname.default.pod.cluster.local" here pod name is unique 
 
+Step - 1:
 -----helm install-----
 
 https://github.com/helm/helm/releases
