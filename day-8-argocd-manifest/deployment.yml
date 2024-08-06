@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hotstar-deployment
+  name: swiggy-deployment
 spec:
   replicas: 5 # Number of desired replicas
   selector:
     matchLabels:
-      app: hotstar
+      app: swiggy
   template:
     metadata:
       labels:
-        app: hotstar
+        app: swiggy
     spec:
       containers:
-      - name: hotstar
-        image: pavan5763/hotstar-project:latest
+      - name: swiggy
+        image: pavan5763/swiggy-project:latest
         ports:
         - containerPort: 3000  # Port your application listens on
